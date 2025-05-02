@@ -1,4 +1,4 @@
-FROM maven:3.4.5 as build
+FROM maven:3.9.9 as build
 COPY . .
 RUN mvn -B clean package -DskipTests
 
