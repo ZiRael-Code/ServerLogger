@@ -1,0 +1,6 @@
+=== The Api starting point is === 	Request:		{		'name': 'israel',		 'dob': 'May 6 2005',		 'gender':male		}
+
+
+=== The Api starting point is === 	Request:		{		'name': 'Ngozie',		 'dob': 'May 6 1988',		 'gender':female		}
+
+

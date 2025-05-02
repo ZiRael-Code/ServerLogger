@@ -1,4 +1,4 @@
-package com.example.serverlogger;
+package com.example.serverlogger.dtos;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,6 @@ public class dto {
     public static String FILENAME(String appName){
         return String.format("src/main/java/com/example/serverlogger/log_folders/%s.txt",appName);
     }
-//    public static String FILENAME="src/main/java/com/example/serverlogger/log_folders/log.txt";
     public static void runFile(String appName) {
         try {
             System.out.println("in run file app name is"+appName);
@@ -36,8 +35,7 @@ public class dto {
             }
         } catch (IOException e) {
             System.out.printf("Failed to initialize data file %s", e);
-            // Consider failing fast if file is critical for your application
-            // System.exit(1);
+           throw new RuntimeException("Sorry there is no such log file with name "+appName);
         }
     }
 }
