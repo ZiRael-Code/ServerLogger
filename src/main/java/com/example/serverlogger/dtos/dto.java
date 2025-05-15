@@ -8,7 +8,16 @@ import java.nio.file.Paths;
 
 public class dto {
     public static String FILENAME(String appName){
-        return String.format("src/main/java/com/example/serverlogger/log_folders/%s.txt",appName);
+        String FILENAME = String.format("src/main/java/com/example/serverlogger/log_folders/%s.txt",appName);;
+        String envPath = System.getenv("FILE_PATH");
+        if (envPath != null && !envPath.trim().isEmpty()) {
+            FILENAME = envPath.trim();
+            System.out.printf("Using FILE_PATH from environment: {%s}", FILENAME);
+        } else {
+            System.out.printf("FILE_PATH not set in environment, using default: {%s}", FILENAME);
+        }
+
+        return FILENAME;
     }
     public static void runFile(String appName) {
         try {

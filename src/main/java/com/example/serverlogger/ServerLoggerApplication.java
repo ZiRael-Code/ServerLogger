@@ -1,4 +1,5 @@
 package com.example.serverlogger;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -7,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableScheduling
 @SpringBootApplication
-public class ServerLoggerApplication {
+public class ServerLoggerApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(ServerLoggerApplication.class, args);
@@ -24,5 +25,10 @@ public class ServerLoggerApplication {
         } catch (Exception e) {
             System.err.println("Failed to call API: " + e.getMessage());
         }
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        callApiEvery10Minutes();
     }
 }
