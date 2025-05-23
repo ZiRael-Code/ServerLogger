@@ -14,7 +14,7 @@ public class ServerLoggerApplication implements CommandLineRunner {
         SpringApplication.run(ServerLoggerApplication.class, args);
     }
 
-    private static final String API_URL = "https://serverlogger-h77l.onrender.com/logger/getLastLog/TestLog";
+    private static final String API_URL = "https://serverlogger-xp6d.onrender.com/logger/getLastLog/TestLog";
     private final RestTemplate restTemplate = new RestTemplate();
     @Scheduled(fixedRate = 10 * 60 * 1000)
     public void callApiEvery10Minutes() {
